@@ -14,7 +14,7 @@ Why Use This?</b><br />
 If you love scrcpy but want a more user-friendly way to interact with it, this GUI is for you. It’s perfect for developers, testers, and anyone who wants to mirror and control their Android device without touching the terminal.</div><div><br /><b>
 
 Getting Started:</b><br />
--Download the latest release of scrcpy lazy gui from <a href="https://github.com/joteapp/Scrcpy-lazy-gui/" target="_blank">release</a> and <a href="https://github.com/Genymobile/scrcpy/releases/" target="_blank">scrcpy</a>.<br />
+-Download the latest release of scrcpy lazy gui from <a href="https://github.com/joteapp/Scrcpy-lazy-gui/releases" target="_blank">release</a> and <a href="https://github.com/Genymobile/scrcpy/releases/" target="_blank">scrcpy</a>.<br />
 -Copy ScrcpyLazyGUI.exe to your scrcpy folder.<br />
 -Connect your Android device via USB (ensure USB debugging is enabled).<br />
 -Launch the app, configure your settings, and start mirroring!<br />
