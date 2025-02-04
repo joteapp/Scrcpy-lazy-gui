@@ -1,4 +1,4 @@
-<span class="firstcharacter">S</span>crcpy lazy GUI
+<span class="firstcharacter">S</span>crcpy lazy GUI for windows 
 <p>&nbsp;</p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRdCW0QGILu5xzXAXirJfXOVnEV9bzfzKvoFqF6anxIBHTObhskcBh6miIg_4zG9BDXHEsZhCstyD3SGRKpGzbie7tpI_PM9eRTpc74rgqj3aFKD9JH2BNTu60GG_LbamlP7Bj5sIgRBmwQZm9NObieofsnwMGShlOaEKa67u0TQtwv9NE-mgITMw_k44/s960/scrcpy-lazy-gui-jotesoft.png" style="margin-left: 1em; margin-right: 1em;"><img alt="Scrcpy-lazy-gui-jotesoft" border="0" data-original-height="600" data-original-width="960" height="400" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRdCW0QGILu5xzXAXirJfXOVnEV9bzfzKvoFqF6anxIBHTObhskcBh6miIg_4zG9BDXHEsZhCstyD3SGRKpGzbie7tpI_PM9eRTpc74rgqj3aFKD9JH2BNTu60GG_LbamlP7Bj5sIgRBmwQZm9NObieofsnwMGShlOaEKa67u0TQtwv9NE-mgITMw_k44/w640-h400/scrcpy-lazy-gui-jotesoft.png" title="Scrcpy-lazy-gui-jotesoft" width="640" /></a></div><div><br /></div><div><br /></div><div><br /></div><br /><p></p><b>
 
 
