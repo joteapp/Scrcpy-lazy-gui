@@ -1,0 +1,156 @@
+<html>
+<head>
+    <title>Scrcpy Lazy GUI By JOTESOFT</title>
+	<hta:application 
+        icon="icon.ico"  
+        border="thick"
+        borderstyle="normal"
+        caption="yes"
+        maximizable="no"
+        minimizable="no"
+        sysmenu="yes" 
+        scroll="no" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            table-layout: fixed;
+            margin: 0 auto;
+        }
+        td {
+            text-align: center;
+            padding: 5px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 200px;
+        }
+        button:hover {
+            background-color: #45a200;
+        }
+        .description {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+        .input-field {
+            width: 80px;
+            padding: 5px;
+            margin: 5px;
+            text-align: center;
+        }
+        .toggle-label {
+            font-size: 14px;
+            margin-left: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+	 window.resizeTo(950, 600);
+        function executeCommand(command) {
+            try {
+                var shell = new ActiveXObject("WScript.Shell");
+                shell.Run(command, 1, false);
+            } catch (e) {
+                alert("Error: Unable to execute the command.\n" + "Details: " + e.message);
+            }
+        }
+
+        function runCommand1() { executeCommand("scrcpy"); }
+        function runCommand2() { executeCommand("scrcpy --tcpip"); }
+        function runCommand3() { executeCommand("scrcpy --rotation=90"); }
+        function runCommand4() { executeCommand("scrcpy --fullscreen"); }
+        function runCommand5() { executeCommand("scrcpy --record=video.mp4"); }
+        function runCommand6() { executeCommand("adb shell wm size reset"); }
+        function runCommand7() { 
+            executeCommand("taskkill /f /im scrcpy.exe"); 
+            executeCommand("taskkill /f /im adb.exe"); 
+        }
+
+        function runCommand8() {
+            var command = prompt("Enter the command to execute:");
+            if (command) {
+                executeCommand(command);
+            }
+        }
+
+        function runCustomScrcpy() {
+            var fullscreen = document.getElementById("fullscreen").checked ? "--fullscreen " : "";
+            var stayAwake = document.getElementById("stayAwake").checked ? "-w " : "";
+            var screenOff = document.getElementById("screenOff").checked ? "-S " : "";
+            var softwareRender = document.getElementById("softwareRender").checked ? "-sw " : "";
+            var bitrate = document.getElementById("bitrate").value;
+            var fps = document.getElementById("fps").value;
+
+            if (bitrate === "") { bitrate = "10"; }  // Default bitrate = 10 Mbps
+            if (fps === "") { fps = "30"; }  // Default FPS = 30 FPS
+
+            var command = "scrcpy " + fullscreen + stayAwake + screenOff + softwareRender + "-b " + bitrate + "M --max-fps=" + fps;
+            executeCommand(command);
+        }
+    </script>
+</head>
+<body>
+    <h1>Scrcpy Lazy GUI</h1>
+    <div class="description">
+        A simple GUI by JOTESOFT to launch Scrcpy commands. If nothing happens after pressing buttons, connect your device via USB.  
+        If the issue persists, use the **Kill Scrcpy & ADB** button and try again.
+    </div>
+
+    <!-- Scrcpy Command Buttons -->
+    <table>
+        <tr>
+            <td><button onclick="runCommand1()">Start scrcpy</button><div class="description">Launches scrcpy in default mode.</div></td>
+            <td><button onclick="runCommand2()">Start scrcpy wireless</button><div class="description">Requires initial USB connection before wireless use.</div></td>
+            <td><button onclick="runCommand3()">Rotate 90°</button><div class="description">Launch scrcpy with 90° rotation.</div></td>
+            <td><button onclick="runCommand4()">Fullscreen</button><div class="description">Launch scrcpy in fullscreen mode.</div></td>
+            <td><button onclick="runCommand5()">Record Screen</button><div class="description">Record the screen as a video.</div></td>
+        </tr>
+        <tr>
+            <td><button onclick="runCommand6()">Reset Device Display</button><div class="description">Reset the device's screen resolution.</div></td>
+            <td><button onclick="runCommand7()">Kill scrcpy & ADB</button><div class="description">Force kill scrcpy and adb processes.</div></td>
+            <td><button onclick="runCommand8()">Custom Command</button><div class="description">Manually enter a Scrcpy/ADB command to execute.</div></td>
+        </tr>
+    </table>
+
+    <!-- Custom Scrcpy Options -->
+    <h2>Custom Scrcpy Settings</h2>
+    <table>
+        <tr>
+            <td>
+                <input type="checkbox" id="fullscreen">
+                <label class="toggle-label" for="fullscreen">Fullscreen</label>
+            </td>
+            <td>
+                <input type="checkbox" id="stayAwake">
+                <label class="toggle-label" for="stayAwake">Stay Awake (-w)</label>
+            </td>
+            <td>
+                <input type="checkbox" id="screenOff">
+                <label class="toggle-label" for="screenOff">Screen Off (-S)</label>
+            </td>
+            <td>
+                <input type="checkbox" id="softwareRender">
+                <label class="toggle-label" for="softwareRender">Software Render (-sw)</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Bitrate (Mbps): <input type="number" id="bitrate" class="input-field" placeholder="10"></td>
+            <td>Max FPS: <input type="number" id="fps" class="input-field" placeholder="30"></td>
+            <td><button onclick="runCustomScrcpy()">Run with Custom Settings</button></td>
+        </tr>
+    </table>
+</body>
+</html>
