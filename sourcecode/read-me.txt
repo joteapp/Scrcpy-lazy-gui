@@ -1,0 +1,15 @@
+----------------------------------------------------------------------
+
+Copy ScrcpyLazyGUI.exe to your scrcpy folder, run the file and enjoy.
+
+-----------------------------------------------------------------------
+
+This is only the GUI. scrcpy is not included. you need to have scrcpy in order to use this.
+this gui tested with scrcpy 3.1. This should works with older version.
+
+This app is 100% free and open source if you paid for it you go scammed.
+official source
+https://github.com/joteapp/Scrcpy-lazy-gui
+
+if you need any help ask me @jotesoft
+www.jote.top
